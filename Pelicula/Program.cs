@@ -8,21 +8,21 @@ namespace Pelicula
     {
         //Campos
         public static void Main(string[] args) { }
-        public int titulo { get; set; }
-        public Int16 año { get; set; }
-        public string País { get; set; }
-        public string Director { get; set; }
+        private string titulo { get; set; }
+        private Int16 año { get; set; }
+        private string País { get; set; }
+        private string director { get; set; }
         private List<Actor> actores = new List<Actor>();
 
         //Constructores
 
         public Pelicula(){}
-        public Pelicula(string titulo, Int16 año)
+        public Pelicula(string titulo,Int16 año)
         {
-            this.Titulo = Titulo;
+            this.titulo = titulo;
             this.año = año;
             this.País = País;
-            this.Director = Director;
+            this.director = director;
         }
      
         //Métodos
