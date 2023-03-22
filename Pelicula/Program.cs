@@ -12,6 +12,7 @@ namespace Pelicula
         public Int16 año { get; set; }
         public string País { get; set; }
         public string Director { get; set; }
+        private List<Actor> actores = new List<Actor>();
 
         //Constructores
 
@@ -19,6 +20,7 @@ namespace Pelicula
         public Pelicula(string titulo, Int16 año)
         {
             this.Titulo = Titulo;
+            this.año = año;
         }
      
         //Métodos
