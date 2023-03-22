@@ -14,6 +14,8 @@ namespace Pelicula
         public string Director { get; set; }
 
         //Constructores
+
+        public Pelicula
      
         //Métodos
      
