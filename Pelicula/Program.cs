@@ -8,7 +8,7 @@ namespace Pelicula
     {
         //Campos
         public static void Main(string[] args) { }
-        public int Titulo { get; set; }
+        public int titulo { get; set; }
         public Int16 año { get; set; }
         public string País { get; set; }
         public string Director { get; set; }
@@ -21,9 +21,16 @@ namespace Pelicula
         {
             this.Titulo = Titulo;
             this.año = año;
+            this.País = País;
+            this.Director = Director;
         }
      
         //Métodos
+
+        public string getTitulo()
+        {
+            return titulo;
+        }
      
         public void Imprime()
         {
