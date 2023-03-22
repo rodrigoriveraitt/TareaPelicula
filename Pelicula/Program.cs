@@ -10,9 +10,13 @@ namespace Pelicula
         public static void Main(string[] args) { }
         private string Titulo { get; set; }
         private Int16 Año { get; set; }
-        private string País { get; set; }
+        private string Pais { get; set; }
         private string Director { get; set; }
+        public string V1 { get; set; }
+        public int V2 { get; set;}
+
         private List<Actor> actores = new List<Actor>();
+        
 
         //Constructores
 
@@ -21,10 +25,18 @@ namespace Pelicula
         {
             Titulo = titulo;
             Año = año;
-            País = pais;
+            Pais = pais;
             Director = director;
         }
-     
+
+        public Pelicula(string v1, int v2)
+        {
+            V1 = v1;
+            V2 = v2;
+        }
+
+
+
         //Métodos
 
         public string getTitulo()
@@ -35,27 +47,85 @@ namespace Pelicula
         {
             return Año;
         }
-     
+        public string getPais()
+        {
+            return Pais;
+        }
+        public string getDirector()
+        {
+            return Director;
+        }
+        public void SetTitulo(string titulo)
+        {
+            Titulo = Titulo;
+        }
+        public void SetAño(Int16 año)
+        {
+            Año = Año;
+        }
+        public void SetPais()
+        {
+            Pais = Pais;
+        }
+        public void SetDirector()
+        {
+            Director = Director;
+        }
         public void Imprime()
         {
             Console.WriteLine($"{Titulo} ({Año})"); 
 
         }
 
+        public void AgregaActor(Actor actor) => actores.Add(actor);
 
+        public void ImprimeActores() 
+        {
+            foreach (Actor actor in actores)
+            {
+                Console.WriteLine($"{actor.getNombre()} ({actor.getPelicula()})");
+            }
+        }
+        
+
+        
     }
 
     public class Actor
     {
         //Propiedades
+        public string Nombre;
+        public string Pelicula;
+        private string v1;
+        private int v2;
 
         //Constructores
 
+        public Actor (string v, int v1) {}
+        public Actor (string nombre, string pelicula)
+        {
+            nombre = Nombre;
+            pelicula = Pelicula;
+        }
+
 
         //Métodos 
+
+        public string getNombre()
+        {
+            return Nombre;
+        }
+        public string getPelicula()
+        {
+            return Pelicula;
+        }
+        public void SetNombre() => Nombre = Nombre;
+        public void SetPelicula() => Pelicula = Pelicula;
+
+
         public void Imprime()
         {
-            Console.WriteLine($"{Nombre} ({año})");
+            Console.WriteLine($"{Nombre} ({Pelicula})");
         }
     }
 
@@ -63,12 +133,15 @@ namespace Pelicula
     // es que pase las pruebas
 
     class Program
-    {
-
-
+    {   
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello");
+            
+            Pelicula p1 = new Pelicula("La La Land", 2016);
+            p1.AgregaActor(new Actor("Ryan Gosling", 1980));
+            p1.AgregaActor(new Actor("Emma Stone", 1988));
+
+            p1.ImprimeActores();
         }
     }
 }

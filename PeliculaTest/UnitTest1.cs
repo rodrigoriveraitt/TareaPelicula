@@ -16,8 +16,8 @@ namespace PeliculaTest
             p1.SetTitulo("La La Land");
             p1.SetAño(2016);
 
-            Assert.Equal("La La Land", p1.GetTitulo());
-            Assert.Equal(2016 , p1.GetAño());
+            Assert.Equal("La La Land", p1.getTitulo());
+            Assert.Equal(2016 , p1.getAño());
         }
 
         [Fact]
