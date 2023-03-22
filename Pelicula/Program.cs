@@ -15,7 +15,11 @@ namespace Pelicula
 
         //Constructores
 
-        public Pelicula(){};
+        public Pelicula(){}
+        public Pelicula(string titulo, Int16 año)
+        {
+            this.Titulo = Titulo;
+        }
      
         //Métodos
      
