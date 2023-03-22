@@ -86,9 +86,8 @@ namespace Pelicula
                 Console.WriteLine($"{actor.getNombre()} ({actor.getPelicula()})");
             }
         }
-        
 
-        
+        public void SetAño(string año) => this.Año = Año;
     }
 
     public class Actor
@@ -96,16 +95,25 @@ namespace Pelicula
         //Propiedades
         public string Nombre;
         public string Pelicula;
-        private string v1;
-        private int v2;
+        public int Año;
+
+        public string V1 { get; }
+        public int V2 { get; }
 
         //Constructores
 
-        public Actor (string v, int v1) {}
-        public Actor (string nombre, string pelicula)
+        public Actor(int año) => this.Año = Año;
+        public Actor (string nombre, string pelicula, int año)
         {
             nombre = Nombre;
             pelicula = Pelicula;
+            año = Año;
+        }
+
+        public Actor(string v1, int v2)
+        {
+            V1 = v1;
+            V2 = v2;
         }
 
 
@@ -137,11 +145,22 @@ namespace Pelicula
         static void Main(string[] args)
         {
             
-            Pelicula p1 = new Pelicula("La La Land", 2016);
+
+            Pelicula p1 = new Pelicula();
+
+            p1.SetTitulo("La La Land");
+
+            p1.SetAño("2016");
+
+            Console.WriteLine("{0}({1})", p1.getTitulo(), p1.getAño());
+
             p1.AgregaActor(new Actor("Ryan Gosling", 1980));
+
             p1.AgregaActor(new Actor("Emma Stone", 1988));
 
             p1.ImprimeActores();
+
+
         }
     }
 }
