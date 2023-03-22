@@ -97,8 +97,6 @@ namespace Pelicula
         public string Pelicula;
         public int Año;
 
-        public string V1 { get; }
-        public int V2 { get; }
 
         //Constructores
 
@@ -110,12 +108,7 @@ namespace Pelicula
             año = Año;
         }
 
-        public Actor(string v1, int v2)
-        {
-            V1 = v1;
-            V2 = v2;
-        }
-
+        
 
         //Métodos 
 
