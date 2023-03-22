@@ -29,12 +29,16 @@ namespace Pelicula
 
         public string getTitulo()
         {
-            return titulo;
+            return Titulo;
+        }
+        public Int16 getAño()
+        {
+            return Año;
         }
      
         public void Imprime()
         {
-     //       Console.WriteLine($"{titulo} ({año})");
+            Console.WriteLine($"{Titulo} ({Año})"); 
 
         }
 
@@ -51,7 +55,7 @@ namespace Pelicula
         //Métodos 
         public void Imprime()
         {
-            Console.WriteLine($"{Nombre} ({Año})");
+            Console.WriteLine($"{Nombre} ({año})");
         }
     }
 
