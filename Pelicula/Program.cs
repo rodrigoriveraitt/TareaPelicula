@@ -15,7 +15,7 @@ namespace Pelicula
 
         //Constructores
 
-        public Pelicula
+        public Pelicula(){};
      
         //Métodos
      
